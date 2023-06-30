@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 # Script to ping an IP address and display the results
 
+#!/bin/bash
 
 if [ $# -eq 0 ]; then
-  echo "Usage: $(basename "$0") {IP_ADDRESS}"
+  echo "Usage: $0 {IP_ADDRESS}"
   exit 1
 fi
 
-ip_address="$1"
+ip_address=$1
 
-ping_result=$(ping -c 5 "$ip_address")
-
-echo "$ping_result"
+ping -c 5 $ip_address
